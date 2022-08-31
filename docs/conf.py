@@ -10,12 +10,14 @@ import sys
 import os
 import sphinx_rtd_theme
 
-from pyECSS import __version__
+# from pyECSS import __version__
 
 # The short X.Y version.
-version = __version__
+# version = __version__
+version = 1.0.0docs
 # The full version, including alpha/beta/rc tags.
-release = __version__
+# release = __version__
+release = 1.0.0docs
 
 project = 'pyECSS'
 copyright = '2022, George Papagiannakis'
