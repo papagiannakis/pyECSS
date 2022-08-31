@@ -14,10 +14,10 @@ import sphinx_rtd_theme
 
 # The short X.Y version.
 # version = __version__
-version = 1.0.0docs
+version = "1.0.0docs"
 # The full version, including alpha/beta/rc tags.
 # release = __version__
-release = 1.0.0docs
+release = "1.0.0docs"
 
 project = 'pyECSS'
 copyright = '2022, George Papagiannakis'
