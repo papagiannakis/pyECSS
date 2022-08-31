@@ -10,14 +10,14 @@ import sys
 import os
 import sphinx_rtd_theme
 
-from pyglGA import __version__
+from pyECSS import __version__
 
 # The short X.Y version.
 version = __version__
 # The full version, including alpha/beta/rc tags.
 release = __version__
 
-project = 'pyglga'
+project = 'pyECSS'
 copyright = '2022, George Papagiannakis'
 author = 'George Papagiannakis'
 
@@ -136,4 +136,4 @@ html_static_path = ['_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'pyglgaDoc'
+htmlhelp_basename = 'pyECSSDoc'

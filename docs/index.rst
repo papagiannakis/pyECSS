@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to pyglga's documentation!
+Welcome to pyECSS's documentation!
 ==================================
 
 This module implements the graphics pipeline using 

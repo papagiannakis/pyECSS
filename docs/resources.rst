@@ -1,4 +1,4 @@
-Other resources for ``pyglga``
+Other resources for ``pyECSS``
 --------------------------------
 
 .. warning::
