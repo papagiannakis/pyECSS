@@ -9,7 +9,7 @@ Creating a Conda Environment
 ------------------------------
 After downloading the proper 
 `Anaconda python distribution <https://www.anaconda.com/distribution/#download-section>`_, 
-based on your system you may create a virtual environment via the ``conda`` command.
+based on your system, you may create a virtual environment via the ``conda`` command.
 
 Typically, you may create a new envirnment via the command::
 
@@ -48,15 +48,25 @@ If you want the latest (development) version of ``pyECSS`` you can locally pip i
 Latest Version - For development
 -----------------------------------
 
-If you want to modify ``pyECSS`` itself, then you should use an editable (``-e``) installation::
+If you want to run and modify ``pyECSS``, you should use an editable (``-e``) installation::
 
     git clone https://github.com/papagiannakis/pyECSS.git
     pip3 install -e ./pyECSS
 
-The proper way to contribute is to fork the `develop branch <https://github.com/papagiannakis/pyECSS.git@develop>`_ , 
-clone it to your computer and run::
+
+Contributing to ``pyECSS``
+-----------------------------------
+
+In order to contribute to contribute to the ``pyECSS`` package: 
+
+1. Fork the `develop branch <https://github.com/papagiannakis/pyECSS.git>`_.
+2. Clone your forked repo to your computer.
+3. Install it in editable mode by running::
 
     pip3 install -e .
 
-at the directory where the `setup.py` file is located. 
-You should then work on a feature branch and open a pull request, when you see fit. 
+  at the directory where the `setup.py` file is located. 
+4. Create a feature branch from the develop branch, and work on it. 
+5. Push your feature branch to your github repo. 
+6. Open a Pull Request to the `original develop branch <https://github.com/papagiannakis/pyECSS.git>`_.
+
