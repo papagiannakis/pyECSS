@@ -1,36 +1,62 @@
 Installation
 ============
 
-Clifford can be installed via the standard mechanisms for Python packages, and is available through both PyPI and Anaconda.
+The pyECSS can be installed via the standard mechanisms for Python packages, and is available through PyPI for standalone use, 
+or Github, for development. We strongly propose to **install and use** pyECSS within a new environment created via ``conda``.
 
-conda
------
-If you are using the `Anaconda python distribution <https://www.anaconda.com/distribution/#download-section>`_, then you should install using the ``conda`` command.
 
-Once you have anaconda installed you can install clifford from the conda-forge channel with the command::
+Creating a Conda Environment
+------------------------------
+After downloading the proper 
+`Anaconda python distribution <https://www.anaconda.com/distribution/#download-section>`_, 
+based on your system you may create a virtual environment via the ``conda`` command.
 
-    conda install -c conda-forge clifford
+Typically, you may create a new envirnment via the command::
 
-PyPI
-----
-If you are not using Anaconda, you can install ``clifford`` from PyPI using the ``pip`` command that comes with Python::
+    conda create -n myenv python==3.9
 
-    pip3 install clifford
+This creates a new environment, named myenv, with a python version 3.9, which is the proper version to run pyECSS.
+
+You may now activate the environment by running::
+
+    conda activate myenv
+
+When finished, you may deactivate it by running::
+
+    conda deactivate
+
+
+
+Stable Version - Standalone Use
+--------------------------------
+For standalone use, you may install pyECSS, via ``pip3`` ::
+
+    pip3 install pyECSS
 
 .. note ::
 
-    The 1.3 release and older are not compatible with :mod:`numba` 0.50.0, and emit a
-    large number of warnings on 0.49.0. To avoid these warnings, install with::
+    The version installed via pip3 may be a few versions behind the current version in development. 
+    If you need to test the latest version, you should install it via ``git`` and local install.
 
-        pip3 install clifford "numba~=0.48.0" "sparse~=0.9.0"
+Latest Version - Standalone Use
+----------------------------------
 
-If you want the development version of ``clifford`` you can ``pip install`` from the latest master with::
+If you want the latest (development) version of ``pyECSS`` you can locally pip install it from the latest master with::
 
-    pip3 install git+https://github.com/pygae/clifford.git@master
+    pip3 install git+https://github.com/papagiannakis/pyECSS.git@develop
 
-If you want to modify ``clifford`` itself, then you should use an editable (``-e``) installation::
+Latest Version - For development
+-----------------------------------
 
-    git clone https://github.com/pygae/clifford.git
+If you want to modify ``pyECSS`` itself, then you should use an editable (``-e``) installation::
+
+    git clone https://github.com/papagiannakis/pyECSS.git@develop
     pip3 install -e ./clifford
 
-If you are not running as ``sudo``, and your python installation is system-wide, you will need to pass ``--user`` to the invocations above.
+The proper way to contribute is to fork the `develop branch <https://github.com/papagiannakis/pyECSS.git@develop>`_ , 
+clone it to your computer and run::
+
+    pip3 install -e .
+
+at the directory where the `setup.py` file is located. 
+You should then work on a feature branch and open a pull request, when you see fit. 

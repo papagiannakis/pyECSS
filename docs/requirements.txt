@@ -1,9 +1,9 @@
 # extra requiremenets needed by the docs themselves
 # numpydoc==0.4
-pandas
+# pandas
 ipykernel
-nbsphinx
-ipywidgets
+# nbsphinx
+# ipywidgets
 
 # workaround for https://github.com/spatialaudio/nbsphinx/issues/584
 sphinx>=4.0.0,<4.1.0

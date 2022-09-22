@@ -10,6 +10,10 @@ import sys
 import os
 import sphinx_rtd_theme
 
+import pathlib
+import sys
+sys.path.insert(0, pathlib.Path(__file__).parents[2].resolve().as_posix())
+
 # from pyECSS import __version__
 
 # The short X.Y version.
@@ -28,6 +32,7 @@ author = 'George Papagiannakis'
 
 extensions = [
     'nbsphinx',
+    # 'sphinx_automodapi.automodapi',
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
@@ -47,6 +52,7 @@ extensions = [
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 bibtex_bibfiles = ['refs.bib']
+numpydoc_show_class_members = False
 
 
 
@@ -85,6 +91,11 @@ html_theme_options = dict(
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
 # pixels large.
 #html_favicon = None
+
+
+# autosummary_generate=['api/Component']
+autodoc_member_order = 'bysource'
+numpydoc_show_class_members = True
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,

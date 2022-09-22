@@ -7,11 +7,12 @@ pyECSS (Entity Component Systems in a Scenegraph) package
 The Compoment related classes are containers dedicated to a specific type of data in pyECSS,
 based on the Composite design pattern
 
-Based on the Composite and Iterator design patterns:
-	• https://refactoring.guru/design-patterns/composite
-    • https://github.com/faif/python-patterns/blob/master/patterns/structural/composite.py
-    • https://refactoring.guru/design-patterns/iterator
-    • https://github.com/faif/python-patterns/blob/master/patterns/behavioral/iterator.py
+Based on the Composite and Iterator design patterns
+
+* https://refactoring.guru/design-patterns/composite
+* https://github.com/faif/python-patterns/blob/master/patterns/structural/composite.py
+* https://refactoring.guru/design-patterns/iterator
+* https://github.com/faif/python-patterns/blob/master/patterns/behavioral/iterator.py
 
 """
 
