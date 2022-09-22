@@ -41,17 +41,17 @@ For standalone use, you may install pyECSS, via ``pip3`` ::
 Latest Version - Standalone Use
 ----------------------------------
 
-If you want the latest (development) version of ``pyECSS`` you can locally pip install it from the latest master with::
+If you want the latest (development) version of ``pyECSS`` you can locally pip install it from the latest develop branch with::
 
-    pip3 install git+https://github.com/papagiannakis/pyECSS.git@develop
+    pip3 install git+https://github.com/papagiannakis/pyECSS.git
 
 Latest Version - For development
 -----------------------------------
 
 If you want to modify ``pyECSS`` itself, then you should use an editable (``-e``) installation::
 
-    git clone https://github.com/papagiannakis/pyECSS.git@develop
-    pip3 install -e ./clifford
+    git clone https://github.com/papagiannakis/pyECSS.git
+    pip3 install -e ./pyECSS
 
 The proper way to contribute is to fork the `develop branch <https://github.com/papagiannakis/pyECSS.git@develop>`_ , 
 clone it to your computer and run::
