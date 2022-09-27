@@ -22,7 +22,7 @@ setup(
     author_email = "papagian@csd.uoc.gr",
     maintainer='Manos Kamarianakis',
     maintainer_email='m.kamarianakis@gmail.com',
-    url='url = http://george.papagiannakis.org',
+    url='https://github.com/papagiannakis/pyECSS',
     keywords = ['ECS','Scenegraph','Python design patterns','Computer Graphics'],
     package_dir={'pyECSS':'pyECSS'},
     packages=find_packages(exclude=["tests","tests.*", "tests/*" ]),
@@ -47,6 +47,7 @@ setup(
     ],
     project_urls={
         "Homepage" : "https://github.com/papagiannakis/pyECSS",
+        "Documentation" : "https://pyecss.readthedocs.io",
         "Bug Tracker": "https://github.com/papagiannakis/pyECSS",
         "Source Code": "https://github.com/papagiannakis/pyECSS",
     },
