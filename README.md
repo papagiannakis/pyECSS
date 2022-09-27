@@ -6,13 +6,6 @@ A python, pure software design pattern based package that feaures plain and simp
 
 ---
 
-### *Copyright 2021-2022 Dr. George Papagiannakis,  papagian@csd.uoc.gr*
-
-### *All Rights Reserved*
-
-### *University of Crete & Foundation for Research & Technology - Hellas (FORTH)*
-
----
 
 > **Why ECS in a Scenegraph?**:
 >
@@ -48,10 +41,19 @@ The following software design patterns are employed:
   python -m pip install -e .
   ```
 
+More information can be found in [Documentation](https://pyecss.readthedocs.io).
 ## Contributors
 
 - Prof. George Papagiannakis
 - Dr. Kamarianakis Manos
+
+---
+
+### *Copyright 2021-2022 Dr. George Papagiannakis,  papagian@csd.uoc.gr*
+
+### *All Rights Reserved*
+
+### *University of Crete & Foundation for Research & Technology - Hellas (FORTH)*
 
 ---
 
