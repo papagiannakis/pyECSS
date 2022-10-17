@@ -432,11 +432,11 @@ class TestUtilities(unittest.TestCase):
         print("rot_ab_glm_slerp: ",rot_ab_glm_slerp.as_quat())
         #print("rot_ab_slerp: ",rot_ab_slerp.as_quat()) #quat slerp is untested as it gives different results than glm!
 
-        np.testing.assert_array_equal(quat_a,quat_np_a)
-        np.testing.assert_array_equal(quat_a,quat_a_vec)
-        np.testing.assert_array_equal(rot.as_quat(),quat_a_vec_norm)
-        np.testing.assert_array_equal(rot_b.as_quat(),quat_b)
-        np.testing.assert_array_equal(rot_c.as_quat(),quat_c)
+        np.testing.assert_array_almost_equal(quat_a,quat_np_a)
+        np.testing.assert_array_almost_equal(quat_a,quat_a_vec)
+        np.testing.assert_array_almost_equal(rot.as_quat(),quat_a_vec_norm)
+        np.testing.assert_array_almost_equal(rot_b.as_quat(),quat_b)
+        np.testing.assert_array_almost_equal(rot_c.as_quat(),quat_c)
         np.testing.assert_array_almost_equal(rot_ab_glm.as_quat(),quat_ab)
         np.testing.assert_array_almost_equal(rot_ab_glm_slerp.as_quat(),quat_slerp)
     
