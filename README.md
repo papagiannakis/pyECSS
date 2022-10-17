@@ -29,19 +29,9 @@ The following software design patterns are employed:
   pip install pyecss
   ```
 
-- For `development`: via `github`
+More information can be found in [Documentation](https://pyecss.readthedocs.io) and specifically at 
+[Installation](https://pyecss.readthedocs.io/en/latest/installation.html).
 
-  ```
-  git clone .......
-  ```
-
-  and in order to install it `locally` via `pip`:
-
-  ```
-  python -m pip install -e .
-  ```
-
-More information can be found in [Documentation](https://pyecss.readthedocs.io).
 ## Contributors
 
 - Prof. George Papagiannakis
