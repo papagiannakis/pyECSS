@@ -52,5 +52,5 @@ setup(
         "Source Code": "https://github.com/papagiannakis/pyECSS",
     },
 
-    python_requires=">=3.9,<3.10",
+    python_requires=">=3.8,<3.10",
 )
