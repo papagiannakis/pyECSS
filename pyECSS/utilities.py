@@ -23,7 +23,7 @@ def vec(*iterable):
     """
     return a numpy vector out of any iterable (list, tuple...) as column-major ('F')
     """
-    return np.asarray(iterable if len(iterable) > 1 else iterable[0],dtype=np.float, order='F')
+    return np.asarray(iterable if len(iterable) > 1 else iterable[0],dtype=np.float32, order='F')
 
 def normalise(vector):
     """standard vector normalization over any numpy array
@@ -138,7 +138,7 @@ def ortho(left, right, bottom, top, near, far):
                      [0,    2/dy, 0,     ry],
                      [0,    0,    -2/dz, rz],
                      [0,    0,    0,     1]
-                     ], dtype=np.float,order='F')
+                     ], dtype=np.float32,order='F')
     
 def perspective(fovy, aspect, near, far):
     """Perspective projection matrix creation function, where 
@@ -165,7 +165,7 @@ def perspective(fovy, aspect, near, far):
     return np.array([[sx, 0,  0,  0],
                      [0,  sy, 0,  0],
                      [0,  0, zz, zw],
-                     [0,  0, -1,  0]], dtype=np.float,order='F')
+                     [0,  0, -1,  0]], dtype=np.float32,order='F')
     
 def frustum(xmin, xmax, ymin, ymax, zmin, zmax):
     """Alternative Perspective projection matrix creation function, where 
@@ -197,7 +197,7 @@ def frustum(xmin, xmax, ymin, ymax, zmin, zmax):
     return np.array([[sx, 0,  a, 0],
                      [0, sy,  b, 0],
                      [0,  0,  c, d],
-                     [0,  0, -1, 0]], dtype=np.float,order='F')
+                     [0,  0, -1, 0]], dtype=np.float32,order='F')
     
 
 def translate(x=0.0, y=0.0, z=0.0):
@@ -278,7 +278,7 @@ def rotate(axis=(1.0,0.0,0.0), angle=0.0, radians=None):
     return np.array([[x*x*nc + c,   x*y*nc - z*s, x*z*nc + y*s, 0],
                      [y*x*nc + z*s, y*y*nc + c,   y*z*nc - x*s, 0],
                      [x*z*nc - y*s, y*z*nc + x*s, z*z*nc + c,   0],
-                     [0,            0,            0,            1]], dtype=np.float,order='F')
+                     [0,            0,            0,            1]], dtype=np.float32,order='F')
     
 
 def lookat(eye, target, up):
@@ -383,7 +383,7 @@ def quaternion(x=vec(0.0, 0.0, 0.0, 0.0), y=0.0, z=0.0, w=1.0):
     :type w: float, optional
     """
     x, y, z = (x, y, z) if isinstance(x, Number) else (x[0], x[1], x[2])
-    return np.array([x, y, z, w], dtype=np.float,order='F') 
+    return np.array([x, y, z, w], dtype=np.float32,order='F') 
 
 
 def quaternion_from_axis_angle(axis:vec, degrees=0.0, radians=None):
@@ -435,7 +435,7 @@ def quaternion_mul(q1, q2):
                             [q1[2],  q1[3],  q1[0], -q1[1]],
                             [q1[3], -q1[2],  q1[1],  q1[0]],
                             [q1[0], -q1[1], -q1[2], -q1[3]]
-                            ],dtype=np.float,order='F'), q2)
+                            ],dtype=np.float32,order='F'), q2)
                         
 
 def quaternion_matrix(q):
@@ -454,7 +454,7 @@ def quaternion_matrix(q):
                      [2 * (qxy + qwz), 2 * (nxx + nzz) + 1, 2 * (qyz - qwx), 0],
                      [2 * (qxz - qwy), 2 * (qyz + qwx), 2 * (nxx + nyy) + 1, 0],
                      [0, 0, 0, 1] 
-                     ], dtype=np.float,order='F')
+                     ], dtype=np.float32,order='F')
     
 
 def quaternion_slerp(q0, q1, fraction):
