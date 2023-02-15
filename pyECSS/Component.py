@@ -25,6 +25,7 @@ from collections.abc    import Iterable, Iterator
 import pyECSS.System
 import uuid  
 import pyECSS.utilities as util
+import numpy as np
 
 
 class Component(ABC, Iterable):
@@ -336,6 +337,7 @@ class BasicTransform(Component):
         pass
 
     def __str__(self):
+        np.set_printoptions(formatter={'float': lambda x: "{0:0.3f}".format(x)}) # print only one 3 decimals
         return f"\n {self.getClassName()} name: {self._name}, type: {self._type}, id: {self._id}, parent: {self._parent._name}, \nl2world: \n{self.l2world}, \nl2cam: \n{self.l2cam}, \ntrs: \n{self.trs}"
     
     def __iter__(self) ->CompNullIterator:
