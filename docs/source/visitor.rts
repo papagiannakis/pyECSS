@@ -1,8 +1,0 @@
-Visitor pattern
-=================
-
-The basics
-------------------------------
-The Visitor pattern is a design pattern in object-oriented programming that allows you to add new operations to a set of related objects without modifying the objects themselves. It is used when you have a complex object structure that you want to perform various operations on, and you don't want to modify the existing code for these operations.
-
-For more information on the visitor pattern check :ref:`here <https://refactoring.guru/design-patterns/visitor>` 

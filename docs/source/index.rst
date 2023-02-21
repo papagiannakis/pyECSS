@@ -25,8 +25,7 @@ the Entity-Component-System protocol.
    :caption: Getting started:
    :hidden:
 
-   installation
-   changelog
+   getting_started/installation
 
 .. toctree::
    :maxdepth: 1
@@ -52,9 +51,16 @@ the Entity-Component-System protocol.
 
 
 .. toctree::
-   :maxdepth: 3
-   :caption: Other resources
+   :maxdepth: 1
+   :caption: Bibliography
    :hidden:
 
-   bibliography
+   bibliography/bibliography
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Change log
+   :hidden:
+
+   changelog/changelog
 
