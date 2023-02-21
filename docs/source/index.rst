@@ -22,12 +22,26 @@ the Entity-Component-System protocol.
 
 .. toctree::
    :maxdepth: 1
-   :caption: Contents:
+   :caption: Getting started:
    :hidden:
 
    installation
    changelog
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Manual:
+   :hidden:
+
+   manual/why_ecs
+   manual/visitor_pattern
+   
+.. toctree::
+   :maxdepth: 1
+   :caption: Tutorials:
+   :hidden:
+
+   tutorials/tutorial_entity
 
 .. toctree::
    :maxdepth: 1
