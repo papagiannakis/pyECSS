@@ -21,14 +21,14 @@ the Entity-Component-System protocol.
 
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: Getting started:
    :hidden:
 
    getting_started/installation
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: Manual:
    :hidden:
 
@@ -36,14 +36,16 @@ the Entity-Component-System protocol.
    manual/visitor_pattern
    
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: Tutorials:
    :hidden:
 
    tutorials/tutorial_entity
+   tutorials/tutorial_component
+   tutorials/tutorial_system
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: API Documentation
    :hidden:
 
