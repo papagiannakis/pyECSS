@@ -15,7 +15,7 @@ the Entity-Component-System protocol.
 .. .. autofunction:: pyECSS.utilities.quaternion
 
 
-.. image:: _static/sample_cube.png
+.. image:: sample_cube.png
     :width: 500 px
     :align: center
 
