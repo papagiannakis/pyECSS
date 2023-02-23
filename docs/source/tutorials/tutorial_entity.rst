@@ -4,7 +4,13 @@ Create an entity
 
 In this tutorial we will demonstrate how to create and use an entity.
 
-This code creates an Object entity and adds it to the scene
+The code below creates a simple entity by calling the class constructor. We also name this entity as root
+
+.. code-block:: python
+    gameObject = Entity("root")
+
+
+If you have a **scene** in your app (probably using the pyGLV) package, you can create an entity and attach it directly to the scene as follows. 
 
 .. code-block:: python
 
