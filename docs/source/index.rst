@@ -15,20 +15,20 @@ the Entity-Component-System protocol.
 .. .. autofunction:: pyECSS.utilities.quaternion
 
 
-.. image:: _static/sample_cube.png
+.. image:: sample_cube.png
     :width: 500 px
     :align: center
 
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: Getting started:
    :hidden:
 
    getting_started/installation
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: Manual:
    :hidden:
 
@@ -36,14 +36,16 @@ the Entity-Component-System protocol.
    manual/visitor_pattern
    
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: Tutorials:
    :hidden:
 
    tutorials/tutorial_entity
+   tutorials/tutorial_component
+   tutorials/tutorial_system
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: API Documentation
    :hidden:
 
