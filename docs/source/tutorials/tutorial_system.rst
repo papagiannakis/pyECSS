@@ -1,4 +1,4 @@
-Create an system
+Create a system
 ==================
 
 In the previous tutorial, we created a component that holds data regarding the physical properties of an object (mass and drag).
