@@ -16,7 +16,7 @@ the Entity-Component-System protocol.
 
 
 .. image:: _static/teapot.png
-    :width: 500 px
+    :width: 700 px
     :align: center
 
 
