@@ -55,27 +55,28 @@ class GravitySystem(System):
         print('New mass is: ' + str(rigidBody.mass))
 
 
-#We create an Entity and a new component
-gameObject = Entity("root")
-rigidBody = RigidBody("gravity", "RigidBody", "1")
+if __name__ == "__main__":
+    #We create an Entity and a new component
+    gameObject = Entity("root")
+    rigidBody = RigidBody("gravity", "RigidBody", "1")
 
-print("Rigidbody init values")
-rigidBody.show()
+    print("Rigidbody init values")
+    rigidBody.show()
 
-rigidBody.mass = 10
-rigidBody.drag = 2
+    rigidBody.mass = 10
+    rigidBody.drag = 2
 
-print("Rigidbody updated values")
-rigidBody.show()
+    print("Rigidbody updated values")
+    rigidBody.show()
 
-#We attach the component to the entity
-gameObject.add(rigidBody)
+    #We attach the component to the entity
+    gameObject.add(rigidBody)
 
-#We create a system that manages the rigidbody components
-gravitySystem = GravitySystem("gravityUpdate", "GravitySystem", "002")
+    #We create a system that manages the rigidbody components
+    gravitySystem = GravitySystem("gravityUpdate", "GravitySystem", "002")
 
-#The component accepts the system
-rigidBody.accept(gravitySystem)
+    #The component accepts the system
+    rigidBody.accept(gravitySystem)
 
-print("Rigidbody after system application values")
-rigidBody.show()
+    print("Rigidbody after system application values")
+    rigidBody.show()
