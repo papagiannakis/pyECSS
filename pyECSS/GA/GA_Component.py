@@ -1,19 +1,11 @@
+import numpy as np
+
 from pyECSS.Component import *
-
-
-from numbers import Number
 from pyECSS.GA.dual_quaternion import DualQuaternion
 from pyECSS.GA.quaternion import Quaternion
 from clifford.g3c import *  # import GA for 3D space
-from pyECSS.GA.type_conversion_functs import Conversions
 from pyECSS.GA.GAutils import t_q_to_TR, extract_t_q_from_TR
-
-
 import pyECSS.utilities as util
-import numpy as np
-import math
-
-
 
 class GATransform(BasicTransform):
     """A BasicTransform Decorator that wraps the component (BasicTransform) 
@@ -43,7 +35,8 @@ class GATransform(BasicTransform):
         # print("New component has been initialized")
 
     def get_trs(self):    
-        # print("CALLED get_trs")
+        """ Returns the Component's TRS transformation matrix, depending on the 
+         constructor input, without updating current TRS matrix """
         if self._trs is not None:
             TRS = self._trs
         elif  self._q is not None and self._vec is not None:
@@ -70,19 +63,17 @@ class GATransform(BasicTransform):
         else: 
             print("missing input for TRS, defaulting to identity")
             TRS = np.identity()
+        # self._trs = TRS
         return TRS
         
     @property #l2world
     def l2world(self):
-        """ Get Component's local to world transform: translation, rotation ,scale """
+        """ Get Component's local to world transformation """
         return self._l2world
     @l2world.setter
     def l2world(self, value):
+        """ Set Component's local to world transformation """
         self._l2world = value
-        
-    @property #translation vector
-    def translation_vec(self):
-        return self.trs[:3,3];
     
     @property #trs
     def trs(self):
@@ -90,15 +81,8 @@ class GATransform(BasicTransform):
         return self._trs
     @trs.setter
     def trs(self, value):
+        """ Set Component's transform: translation, rotation ,scale """
         self._trs = value
-    
-    
-    @property #scale vector
-    def scale(self):
-        x = self.trs[0, 0];
-        y = self.trs[1, 1];
-        z = self.trs[2, 2];
-        return [x, y, z];
 
     def update(self, **kwargs):
         """ Local 2 world transformation calculation
@@ -123,15 +107,10 @@ class GATransform(BasicTransform):
 
 
 if __name__ == "__main__":
-    # a = GATransform()
-    # print (" we want to translate the point (5,3,2) by t = (2,3,14) ")    
-    # print( 'translated point: ', a.translate_dual_quaternion(5,3,2,2,3,14) )
-    # O = 5*e1 # our object: the point (5,0,0)
-    # print ('Original Point-Object = ', O)
-    # print( 'Rotated Point-object = ', a.rotate_multivector(O,2*math.pi/3)) # the rotated object, ie, the point (0,5,0)
     
     from pyECSS.GA.GA_Component import GATransform
     from pyECSS.GA.GATransformSystem import GATransformSystem
+
     t = [1,2,3]
     q = [1,2,3,4] # x,y,z,w
     TR = t_q_to_TR(t,q)

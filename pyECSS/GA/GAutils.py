@@ -1,7 +1,6 @@
-import numpy as np
 from clifford.g3c import *
 from clifford import Cl, conformalize
-from numpy import e,pi
+
 
 G3, blades_g3 = Cl(3)
 G3c, blades_g3c, stuff = conformalize(G3)
