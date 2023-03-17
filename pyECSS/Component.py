@@ -38,6 +38,22 @@ class Component(ABC, Iterable):
     """
     
     def __init__(self, name=None, type=None, id=None):
+        """
+        Initializes a Component object with optional name, type, and id parameters.
+
+        Args:
+        - name (str, optional): The name of the component. Defaults to None.
+        - type (str, optional): The type of the component. Defaults to None.
+        - id (str, optional): The ID of the component. Defaults to None.
+
+        If name is None, then the component's name is set to the name of its class. If type is None, the type is set to the name of the class.
+        If id is None, a unique ID is generated using the uuid.uuid1() method.
+
+        The _parent, _children, _worldManager, and _eventManager attributes are set to None by default.
+
+        Returns:
+        - None
+        """
         
         if (name is None):
             self._name = self.getClassName()
@@ -62,34 +78,38 @@ class Component(ABC, Iterable):
     #define properties for id, name, type, parent
     @property #name
     def name(self) -> str:
-        """ Get Component's name """
+        """Get the name of the component."""
         return self._name
     @name.setter
     def name(self, value):
+        """Set the name of the component."""
         self._name = value
         
     @property #type
     def type(self) -> str:
-        """ Get Component's type """
+        """Get the type of the component."""
         return self._type
     @type.setter
     def type(self, value):
+        """Set the type of the component."""
         self._type = value
         
     @property #id
     def id(self) -> int:
-        """ Get Component's id """
+        """Get the ID of the component."""
         return self._id
     @id.setter
     def id(self, value):
+        """Set the ID of the component."""
         self._id = value
         
     @property #parent
     def parent(self) -> Component:
-        """ Get Component's parent """
+        """Get the parent of the component."""
         return self._parent
     @parent.setter
     def parent(self, value):
+        """Set the parent of the component."""
         self._parent = value
         
     @property #ECSSManager
@@ -98,30 +118,71 @@ class Component(ABC, Iterable):
         return self._worldManager
     @worldManager.setter
     def worldManager(self, value):
+        """ Set Component's ECSSManager """
         self._worldManager = value
     
     @property #EventManager
     def eventManager(self):
-        """ Get Component's EventManager """
+        """Get the ECSSManager of the component."""
         return self._eventManager
     @eventManager.setter
     def eventManager(self, value):
+        """Set the ECSSManager of the component."""
         self._eventManager = value
     
     def add(self, object: Component) ->None:
+        """
+        Add a Component object to the children of this Component.
+
+        Args:
+        - object (Component): The Component to add as a child.
+
+        Returns:
+        - None
+        """
         pass
 
     def remove(self, object: Component) ->None:
+        """
+        Removes a Component object to the children of this Component.
+
+        Args:
+        - object (Component): The Component to remove as a child.
+
+        Returns:
+        - None
+        """
         pass
         
     def getChild(self, index) ->Component:
+        """
+        Get the child Component object at the given index.
+
+        Args:
+        - index (int): The index of the child Component to retrieve.
+
+        Returns:
+        - Component: The child Component object at the given index.
+        """
         return None
     
     def getNumberOfChildren(self) -> int:
+        """
+        Get the number of child Component objects for this Component.
+
+        Returns:
+        - int: The number of child Component objects for this Component.
+        """
         return len(self._children)
     
     @classmethod
     def getClassName(cls):
+        """
+        Get the name of this Component class.
+
+        Returns:
+        - str: The name of this Component class.
+        """
         return cls.__name__
     
     @abstractmethod
@@ -135,7 +196,7 @@ class Component(ABC, Iterable):
     def update(self, **kwargs):
         """
         method to be subclassed for debuging purposes only, 
-        in case we need some behavioral or logic computation within te Component. 
+        in case we need some behavioral or logic computation within the Component. 
         This violates the ECS architecture and should be avoided.
         """
         raise NotImplementedError
@@ -164,6 +225,12 @@ class Component(ABC, Iterable):
         return self 
     
     def __str__(self):
+        """
+        Returns a string representation of this Component.
+
+        Returns:
+        - str: A string representation of this Component.
+        """
         return f"\n {self.getClassName()} name: {self._name}, type: {self._type}, id: {self._id}, parent: {self._parent._name}"
 
 
@@ -298,18 +365,19 @@ class BasicTransform(Component):
         
         Arguments could be "l2world=" or "trs=" or "l2cam=" to set respective matrices 
         """
-        print(self.getClassName(), ": update() called")
+        # global verbose
+        # if verbose: print(self.getClassName(), ": update() called")
         arg1 = "l2world"
         arg2 = "trs"
         arg3 = "l2cam"
         if arg1 in kwargs:
-            print("Setting: ", arg1," with: \n", kwargs[arg1])
+            # if verbose: print("Setting: ", arg1," with: \n", kwargs[arg1])
             self._l2world = kwargs[arg1]
         if arg2 in kwargs:
-            print("Setting: ", arg2," with: \n", kwargs[arg2])
+            # if verbose: print("Setting: ", arg2," with: \n", kwargs[arg2])
             self._trs = kwargs[arg2]
         if arg3 in kwargs:
-            print("Setting: ", arg3," with: \n", kwargs[arg3])
+            # if verbose: print("Setting: ", arg3," with: \n", kwargs[arg3])
             self._l2cam = kwargs[arg3]
         
     def accept(self, system: pyECSS.System, event = None):
@@ -320,8 +388,10 @@ class BasicTransform(Component):
         :type system: [System]
         """
         
+        system.apply2GATransform(self) # from GATransform
         system.apply2BasicTransform(self) #from TransformSystem
         system.applyCamera2BasicTransform(self) #from CameraSystem
+        
         """
         if (isinstance(system, System.TransformSystem)):
             system.apply(self)

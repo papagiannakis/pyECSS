@@ -126,6 +126,13 @@ class System(ABC):
         """
         pass
     
+    def apply2GATransform(self, basicTransform: pyECSS.GA.GA_Component.GATransform , event = None):
+        """
+        method to be subclassed for  behavioral or logic computation 
+        when visits Components. 
+        """
+        pass
+
     def applyCamera2BasicTransform(self, basicTransform: pyECSS.Component.BasicTransform, event = None):
         """
         method to be subclassed for  behavioral or logic computation 
@@ -368,3 +375,17 @@ class RenderSystem(System):
     """
     pass
                
+
+# if __name__=="__main__":
+#     from pyECSS.GA.GA_Component import GATransform
+#     from pyECSS.GA.quaternion import Quaternion
+#     # a = GATransform(trs=util.scale(1,2,3))
+#     a = GATransform(q = Quaternion(0,1,0,1))
+#     q = Quaternion(0,1,0,1)
+#     print(q.to_transformation_matrix())
+#     # q = Quaternion(0,1,0,1)
+#     b = GATransformSystem()
+#     a.accept(b)
+#     print(a.trs)
+#     # print (" we want to translate the point (5,3,2) by t = (2,3,14) ")    
+#     # print( 'translated point: ', a.translate_dual_quaternion(5,3,2,2,3,14) )
