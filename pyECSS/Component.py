@@ -365,19 +365,19 @@ class BasicTransform(Component):
         
         Arguments could be "l2world=" or "trs=" or "l2cam=" to set respective matrices 
         """
-        global verbose
-        if verbose: print(self.getClassName(), ": update() called")
+        # global verbose
+        # if verbose: print(self.getClassName(), ": update() called")
         arg1 = "l2world"
         arg2 = "trs"
         arg3 = "l2cam"
         if arg1 in kwargs:
-            if verbose: print("Setting: ", arg1," with: \n", kwargs[arg1])
+            # if verbose: print("Setting: ", arg1," with: \n", kwargs[arg1])
             self._l2world = kwargs[arg1]
         if arg2 in kwargs:
-            if verbose: print("Setting: ", arg2," with: \n", kwargs[arg2])
+            # if verbose: print("Setting: ", arg2," with: \n", kwargs[arg2])
             self._trs = kwargs[arg2]
         if arg3 in kwargs:
-            if verbose: print("Setting: ", arg3," with: \n", kwargs[arg3])
+            # if verbose: print("Setting: ", arg3," with: \n", kwargs[arg3])
             self._l2cam = kwargs[arg3]
         
     def accept(self, system: pyECSS.System, event = None):
